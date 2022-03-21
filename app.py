@@ -4,6 +4,14 @@ app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 
+# TODO
+# Setup DB connections
+# Setup HTML forms
+# CSS?
+# Handle POST requests
+# Create views for all interactions
+# ...
+
 @app.route('/', methods=["GET"])
 def index():
     if 'username' not in session:
