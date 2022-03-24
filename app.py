@@ -1,7 +1,9 @@
 from flask import Flask, render_template, session, request, redirect, url_for
+from db import DB
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+db = DB()
 
 
 # TODO
@@ -16,6 +18,7 @@ app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 def index():
     if 'username' not in session:
         print("IMPLEMENT USERS")
+    print(db.query(query="SELECT version();"))
     return render_template('index.html')
 
 
