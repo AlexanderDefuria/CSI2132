@@ -57,10 +57,12 @@ def login():
             if password == actual_pass:
                 login_user(load_user(username))
                 print(flask_login.current_user.id)  # Print Current User's username
+                return redirect("/reception")
+            else:
+                print("INVALID PASSWORD")
 
-            return redirect("/reception")
         except IndexError as e:
-            print(e)
+            print("NO SUCH USER")
 
     return render_template('login.html')
 
