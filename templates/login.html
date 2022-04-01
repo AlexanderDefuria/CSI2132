@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-</head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}"></head>
 <body>
-    <form method="post">
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username">
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password">
-        <p><input type="submit" value="Login">
+    <form action="{{ url_for('login') }}" method="post">
+        <label>
+            Username: <input type="text" placeholder="Enter Username" name="username" required>
+        </label>
+        <label>
+            Password: <input type="password" placeholder="Enter Password" name="password" required>
+        </label>
+        <button type="submit">Login</button>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
     </form>
 </body>
 </html>
