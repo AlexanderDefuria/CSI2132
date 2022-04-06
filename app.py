@@ -1,3 +1,4 @@
+from atexit import register
 import flask_login
 from flask import Flask, render_template, session, request, redirect, url_for
 from flask_login import LoginManager, login_user, login_required, logout_user
@@ -65,6 +66,10 @@ def login():
             print("NO SUCH USER")
 
     return render_template('index.html')
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
 
 
 if __name__ == '__main__':

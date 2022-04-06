@@ -55,6 +55,7 @@ html {
   #login-form-submit {
     width: 100%;
     padding: 7px;
+    font-size: smaller;
     border: none;
     border-radius: 5px;
     color: white;
@@ -64,9 +65,10 @@ html {
     outline: none;
   }
 
-  #register-button{
-    width: 100%;
+  a[href="/register"]{
+    font-size: smaller;
     text-align: center;
+    width: 100%;
     padding: 7px;
     border: none;
     border-radius: 5px;
@@ -75,4 +77,8 @@ html {
     background-color: #3a3a3a;
     cursor: pointer;
     outline: none;
-  }
+    text-decoration: none;
+    
+}
+
+  
