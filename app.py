@@ -64,7 +64,7 @@ def login():
         except IndexError as e:
             print("NO SUCH USER")
 
-    return render_template('login.html')
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
