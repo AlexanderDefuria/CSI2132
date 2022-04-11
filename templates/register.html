@@ -5,18 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
 </head>
 
 <body>
   <main id="main-holder">
     <h1 id="welcome-header">Register</h1>
-    <h2 id="login-header">Login</h2>
     
     <form id="login-form">
+      <select name="user-type" id="user-type" class="login-form-field">
+      <option value="patient">Patient</option>
+      <option value="responsible-party">Responsible Party</option>
+      <option value="employee">Employee</option>
+      </select>
+
+      <input type="text" name="firstName" id="firstName-field" class="login-form-field" placeholder="First Name">
+      <input type="text" name="middleName" id="middleName-field" class="login-form-field" placeholder="Middle Name">
+      <input type="text" name="lastName" id="lastName-field" class="login-form-field" placeholder="Last Name">
+
+      <input type="text" name="houseNumber" id="houseNumber-field" class="login-form-field" placeholder="House Number">
+      <input type="text" name="unitNumber" id="unitNumber-field" class="login-form-field" placeholder="Unit Number">
+      <input type="text" name="street" id="street-field" class="login-form-field" placeholder="Street">
+      <input type="text" name="city" id="city-field" class="login-form-field" placeholder="City">
+      <input type="text" name="province" id="province-field" class="login-form-field" placeholder="Province">
+
+      <input type="text" name="gender" id="gender-field" class="login-form-field" placeholder="Gender">
+
+      <input type="number" name="ssn" id="ssn-field" class="login-form-field" placeholder="Social Security Number">
+
       <input type="text" name="username" id="username-field" class="login-form-field" placeholder="E-mail">
-      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
-      <input type="submit" value="Login" id="login-form-submit">
-      <input type="register" value="Register" id="register-button">
+      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Set Password">
+      
+      <label for="dateOfBirth-field">Date of Birth</label>
+      <input type="date" name="dateOfBirth" id="dateOfBirth-field" class="login-form-field" placeholder="Date of Birth">
+
+      <input type="number" name="phoneNumber" id="phoneNumber-field" class="login-form-field" placeholder="Phone Number">
+
+      <a href ="/loginTwo">Register</a>
     </form>
   
   </main>
