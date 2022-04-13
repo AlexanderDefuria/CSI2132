@@ -13,7 +13,7 @@
     <h1 id="welcome-header">Welcome!</h1>
     <h2 id="login-header">Login</h2>
     
-    <form id="login-form">
+    <form id="login-form" action="{{ url_for('login') }}" method="post">
       <input type="text" name="username" id="username-field" class="login-form-field" placeholder="E-mail">
       <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
       <input type="submit" value="Login" id="login-form-submit">

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient List</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+
+<body>
+  <main id="main-holder">
+    <h1 id="welcome-header">Patient List</h1>
+      {% for user in users %}
+          <p>
+              {{ user[2] }}, {{ user[4] }}
+              <a href="{{ url_for('receptionist_edit', id=user[13]) }}">Edit Patient</a>
+              <a href="{{ url_for('records', id=user[13]) }}">Patient Records</a>
+          </p>
+      {% endfor %}
+
+  </main>
+</body>
+
+</html>
