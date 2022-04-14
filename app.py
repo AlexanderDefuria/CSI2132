@@ -47,11 +47,12 @@ def receptionist_portal():
 
 
 @app.route('/users', methods=["GET"])
+@login_required
 def show_users():
     if flask_login.current_user.role != "Patient" and flask_login.current_user.role != "ResponsibleUser":
         return render_template('patients.html', users=db.query('SELECT * FROM "User";')) #TODO NEED TO SPECIFY PATIENTS
     else:
-        return redirect("/index")
+        return render_template("/index")
 
 
 @app.route('/reception/users/<int:id>', methods=["GET", "POST"])
@@ -96,6 +97,10 @@ def login():
 
     return render_template('index.html')
 
+@app.route('/loginTwo', methods=['GET', 'POST'])
+def loginTwo():
+    return render_template('index.html')
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -115,10 +120,11 @@ def register():
         ssn = request.form.get("ssn-field")
         dob = request.form.get("dateOfBirth-field")
         phone = request.form.get("phoneNumber-field")
+        role = request.form.get("user-type")
 
         try:
-            db.query('INSERT INTO public."User" (username, password, first_name, middle_name, last_name, street_number, street_name, apt_number, city, province, zip_code, gender, ssn, phone, date_of_birth) VALUES' +
-                     str((username, password, first_name, middle_name, last_name, street_number, street_name, apt_number, city, province, zip_code, gender, ssn, phone, dob)) + ';')
+            db.query('INSERT INTO public."User" (username, password, first_name, middle_name, last_name, street_number, street_name, apt_number, city, province, zip_code, gender, ssn, phone, date_of_birth, role) VALUES' +
+                     str((username, password, first_name, middle_name, last_name, street_number, street_name, apt_number, city, province, zip_code, gender, ssn, phone, dob, role)) + ';')
 
         except IndexError as e:
             print("FORM ERROR")

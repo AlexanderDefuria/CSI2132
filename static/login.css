@@ -52,10 +52,11 @@ html {
   }
   
   
-  #login-form-submit {
+  a[href="/users"] {
+    font-size: smaller;
+    text-align: center;
     width: 100%;
     padding: 7px;
-    font-size: smaller;
     border: none;
     border-radius: 5px;
     color: white;
@@ -63,6 +64,8 @@ html {
     background-color: #3a3a3a;
     cursor: pointer;
     outline: none;
+    text-decoration: none; 
+    margin-bottom: 1mm;
   }
 
   a[href="/register"]{
@@ -77,8 +80,7 @@ html {
     background-color: #3a3a3a;
     cursor: pointer;
     outline: none;
-    text-decoration: none;
-    
+    text-decoration: none; 
 }
 
   

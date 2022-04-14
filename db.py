@@ -1,4 +1,5 @@
 import psycopg2
+import os
 
 
 class DB:
@@ -23,7 +24,6 @@ class DB:
         out = cur.fetchall()
         cur.close()
         return out
-
 
 def build():
     db = DB()
