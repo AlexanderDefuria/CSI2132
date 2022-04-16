@@ -59,6 +59,7 @@ def show_users():
 def receptionist_edit(id):
     if request.method == 'POST':
         # Do the same as register redoing values as per form.
+
         print("NOT IMPLEMENTED YET...")
     else:
         # THIS NEEDS TO SPECIFY PATIENTS
@@ -75,6 +76,38 @@ def records(id):
             return render_template('records.html', record=db.query('SELECT * FROM "Records" WHERE "patient"=' + str(id) + ';')[0])
         except IndexError as e:
             return render_template('records.html', record='NA')
+
+
+@app.route('/addappointment', methods=["GET", "POST"])
+def addAppointment():
+    patientUserID=""
+    if request.method == "POST" or request.method == "GET":
+        lastName = request.form.get("patientFirstName")
+        middleName = request.form.get("patientMiddleName")
+        firstName = request.form.get("patientFirstName")
+        dentistID = request.form.get("dentistID")
+        date = request.form.get("appointmentDate")
+        startTime = request.form.get("startTime")
+        endTime = request.form.get("endTime")
+        appointmentType = request.form.get("appointmentType")
+        status = request.form.get("status")
+        room = request.form.get("room")
+        patient_email = request.form.get("patientEmail")
+        branchID = request.form.get("branchID")
+
+
+        try:
+            patientUserID= db.query(f'select user_id from "Patient" where email={patient_email}')
+        except IndexError as e:
+            print("NO SUCH USER")
+
+        try:
+            db.query('insert into "Appointment" (patient,dentist,date,star_time,end_time,appointment_Type,status,room_assigned,booked_at) values' +
+                     f'({str(patientUserID)},{str(dentistID)},{str(date)},{str(startTime)},{str(endTime)},{str(appointmentType)},{str(status)},{str(room)},{str(patient_email)},{str(branchID)})')
+        except IndexError as e:
+            print("Error")
+
+    return render_template('index.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -96,6 +129,7 @@ def login():
             print("NO SUCH USER")
 
     return render_template('index.html')
+
 
 @app.route('/loginTwo', methods=['GET', 'POST'])
 def loginTwo():

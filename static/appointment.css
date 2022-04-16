@@ -1,0 +1,56 @@
+html {
+    height: 100%;
+  }
+
+  body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-image: url(backgroundPicture.jpeg)
+  }
+
+  #main-holder {
+    width: 40%;
+    height: 90%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 7px;
+    /*box-shadow: 0px 0px 5px 2px black;*/
+  }
+
+  #appointment-field {
+    align-self: flex-start;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 70px;
+  }
+
+  .appointment-field::placeholder {
+    color: #3a3a3a;
+  }
+
+  .appointment-field {
+    border: none;
+    border-bottom: 1px solid #000000;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    outline: none;
+    padding: 0px 0px 5px 5px;
+  }
+
+    button{}
+
+
+label {
+    color: black;
+    padding: 7px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+  }
+

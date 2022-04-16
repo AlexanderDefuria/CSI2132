@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='appointment.css') }}">
+</head>
+
+<body>
+  <main id="main-holder">
+    <h1 id="welcome-header">New Appointment</h1>
+
+    <form id="appointmentForm">
+      <select name="appointmentType" id="appointmentType" class="appointment-field">
+      <option value="dental">dental</option>
+      </select>
+
+      <input type="number" name="dentistID" id="dentistID" class="appointment-field" placeholder="Dentist ID">
+
+      <input type="text" name="patientFirstName" id="patientFirstName" class="appointment-field" placeholder="Patient First Name">
+      <input type="text" name="patientMiddleName" id="patientMiddleName" class="appointment-field" placeholder="Patient Middle Name">
+      <input type="text" name="patientLastName" id="patientLastName" class="appointment-field" placeholder="Patient Last Name">
+      <input type="email" name="patientEmail" id="patientEmail" class="appointment-field" placeholder="Patient Email">
+
+      <label for="appointmentDate">Appointment Date</label>
+      <input type="date" name="appointmentDate" id="appointmentDate" class="appointment-field" placeholder="Appointment Date">
+      <label for="startTime">Start Time</label>
+      <input type="time" name="startTime" id="startTime" class="appointment-field" placeholder="Start Time">
+      <label for="endTime">End Time</label>
+      <input type="time" name="endTime" id="endTime" class="appointment-field" placeholder="End Time">
+
+      <input type="number" name="room" id="room" class="appointment-field" placeholder="Room No.">
+      <input type="text" name="status" id="status" class="appointment-field" placeholder="Status">
+
+      <input type="number" name="branchID" id="branchID" class="appointment-field" placeholder="branchID">
+
+      <a herf="/loginTwo">
+        <button>Add New Appointment</button>
+      </a>
+    </form>
+
+  </main>
+</body>
+
+</html>
